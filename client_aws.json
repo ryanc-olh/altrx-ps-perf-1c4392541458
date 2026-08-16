@@ -1,7 +1,7 @@
 {
  "client": "altrx",
- "generated_at": "2026-08-16T17:25:07-05:00",
- "generated_at_ct": "5:25pm",
+ "generated_at": "2026-08-16T18:18:04-05:00",
+ "generated_at_ct": "6:18pm",
  "window": {
   "start": "2026-08-09",
   "end": "2026-08-15"
@@ -118,17 +118,17 @@
    }
   },
   "today": {
-   "offered": 889,
-   "answered": 1250,
-   "offered_live": 889,
-   "answered_live": 1250,
-   "answered_in_sl": 857,
+   "offered": 945,
+   "answered": 1326,
+   "offered_live": 945,
+   "answered_live": 1326,
+   "answered_in_sl": 893,
    "short_abandoned": 3,
-   "sl_den": 889,
-   "sl": 96.74,
-   "sl_answered_only": 96.73,
-   "asa_s": 7.8,
-   "aht_s": 496.5
+   "sl_den": 945,
+   "sl": 94.81,
+   "sl_answered_only": 94.8,
+   "asa_s": 9.9,
+   "aht_s": 498.7
   }
  },
  "hourly_voice": {
@@ -1795,10 +1795,10 @@
     95
    ],
    [
-    128,
+    129,
     85,
-    1121811,
-    128,
+    1130575,
+    129,
     82,
     0,
     82
@@ -1813,22 +1813,22 @@
     87
    ],
    [
-    37,
-    29,
-    293897,
-    37,
-    34,
+    95,
+    56,
+    2613675,
+    95,
+    65,
     0,
-    34
+    65
    ],
    [
+    17,
+    9,
+    932113,
+    17,
+    25,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    25
    ],
    [
     0,
