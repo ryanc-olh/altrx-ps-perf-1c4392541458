@@ -50,32 +50,32 @@
 <body>
 <div class="wrap">
   <h1>Trinity — Patient Support Performance</h1>
-  <div class="sub">Aug 12–18, 2026 · Voice · Email · Trinity · Central Time · <b id="hdrStamp">updated 1:28am CDT</b></div>
+  <div class="sub">Aug 12–18, 2026 · Voice · Email · Trinity · Central Time · <b id="hdrStamp">updated 5:35am CDT</b></div>
   
   <div id="pane-sum">
 
   <div class="sec" style="border-color:var(--amb);">Today so far · Wed Aug 19 <span style="font-weight:400;color:var(--amb);font-size:13px;">— in progress</span></div>
   <div class="grid kpis">
-    <div class="card"><div class="k">Voice — calls</div><div class="v" id="tvV">0</div><div class="n" id="tvVn">as of Tue 8/18, ~8p CT</div></div>
-    <div class="card"><div class="k">Email — received</div><div class="v" id="keREC">0</div><div class="n" id="keLat">as of ~12:30a CT</div></div>
-    <div class="card"><div class="k">Email — open backlog</div><div class="v">2,041</div><div class="n">as of ~12:30a CT</div></div>
+    <div class="card"><div class="k">Voice — calls</div><div class="v" id="tvV">2</div><div class="n" id="tvVn">as of ~1a CT</div></div>
+    <div class="card"><div class="k">Email — received</div><div class="v" id="keREC">10</div><div class="n" id="keLat">as of ~4:30a CT</div></div>
+    <div class="card"><div class="k">Email — open backlog</div><div class="v">1,987</div><div class="n">as of ~4:30a CT</div></div>
     
   </div>
 
   <!-- id so the live patcher refreshes this. It is a BUILD-TIME substitution, so while the tile above
        said "updated 11:44am" this still read 11:00 and made a perfectly healthy feed look dead
        (Ryan 2026-08-14). Two stamps for the same feed must never disagree. -->
-  <div class="sec">Voice <span style="font-weight:400;color:var(--mut);font-size:12px;" id="vStamp">· updated through Tue 8/18, ~8p CT</span></div>
+  <div class="sec">Voice <span style="font-weight:400;color:var(--mut);font-size:12px;" id="vStamp">· updated through ~1a CT</span></div>
   
   <div class="grid kpis">
     <!-- ids so the 5-minute feed can patch these. They report TODAY, so without patching they froze at
          build time while the today ROW beside them kept updating live -- the tiles read 2,130/41% against
          a row saying 2,339/38% (2026-08-14). Abandonment is deliberately given NO id: it is patient-level
          from the build and the feed cannot compute it, exactly as the row's abandon cell is left alone. -->
-    <div class="card"><div class="k">Answered ≤30s</div><div class="v " id="kvSL">—</div><div class="n">Wed Aug 19 so far · Target 80%</div></div>
+    <div class="card"><div class="k">Answered ≤30s</div><div class="v grn" id="kvSL">100%</div><div class="n">Wed Aug 19 so far · Target 80%</div></div>
     <div class="card"><div class="k">Abandonment</div><div class="v ">—</div><div class="n">Wed Aug 19 so far · Target &lt;5%</div></div>
-    <div class="card"><div class="k">Avg Speed of Answer</div><div class="v " id="kvASA">—</div><div class="n">Wed Aug 19 so far · Target ≤30s</div></div>
-    <div class="card"><div class="k">Inbound Volume</div><div class="v" id="kvVOL">—</div><div class="n">Wed Aug 19 so far</div></div>
+    <div class="card"><div class="k">Avg Speed of Answer</div><div class="v grn" id="kvASA">0.1m</div><div class="n">Wed Aug 19 so far · Target ≤30s</div></div>
+    <div class="card"><div class="k">Inbound Volume</div><div class="v" id="kvVOL">2</div><div class="n">Wed Aug 19 so far</div></div>
   </div>
   <div class="lbl">By Day <span style="font-weight:400;color:var(--mut);font-size:12px;">· Aug 5–18 plus today</span></div>
   <table>
@@ -89,27 +89,27 @@
       <tr class="ghost"><td>Mon 8/10</td><td>908</td><td>855</td><td>61%</td><td>1.0m</td><td>2%</td></tr>
       <tr class="ghost"><td>Tue 8/11</td><td>787</td><td>752</td><td>66%</td><td>1.0m</td><td>2%</td></tr>
       <tr class="tot ghost"><td>Aug 5–11</td><td>4,618</td><td>4,394</td><td>70%</td><td>1.0m</td><td>1%</td></tr>
-      <tr class="wkdiv"><td>Wed 8/12</td><td>768</td><td>736</td><td class="grn">82%</td><td>1.1m</td><td>1%</td></tr>
+      <tr class="wkdiv"><td>Wed 8/12</td><td>769</td><td>737</td><td class="grn">82%</td><td>1.1m</td><td>1%</td></tr>
       <tr><td>Thu 8/13</td><td>692</td><td>683</td><td class="grn">91%</td><td>0.4m</td><td>1%</td></tr>
       <tr><td>Fri 8/14</td><td>590</td><td>584</td><td class="grn">93%</td><td>0.3m</td><td>1%</td></tr>
       <tr><td>Sat 8/15</td><td>286</td><td>280</td><td class="grn">80%</td><td>0.6m</td><td>2%</td></tr>
       <tr><td>Sun 8/16</td><td>246</td><td>244</td><td class="grn">94%</td><td>0.2m</td><td>0%</td></tr>
       <tr><td>Mon 8/17</td><td>733</td><td>717</td><td class="grn">87%</td><td>0.4m</td><td>1%</td></tr>
-      <tr><td>Tue 8/18</td><td>748</td><td>739</td><td class="grn">88%</td><td>0.3m</td><td>1%</td></tr>
-      <tr class="tot"><td>Aug 12–18</td><td>4,063</td><td>3,983</td><td class="grn">88%</td><td>0.5m</td><td>1%</td></tr>
-      <tr class="amb" id="vTodayRow"><td>Wed 8/19*</td><td>0</td><td>0</td><td>0%</td><td>0.0m</td><td>—</td></tr>
+      <tr><td>Tue 8/18</td><td>786</td><td>775</td><td class="grn">88%</td><td>0.3m</td><td>1%</td></tr>
+      <tr class="tot"><td>Aug 12–18</td><td>4,102</td><td>4,020</td><td class="grn">88%</td><td>0.5m</td><td>1%</td></tr>
+      <tr class="amb" id="vTodayRow"><td>Wed 8/19*</td><td>2</td><td>2</td><td>100%</td><td>0.1m</td><td>—</td></tr>
     </tbody>
   </table>
   <div class="grid charts" style="margin-top:20px;">
     <div><div class="lbl" style="margin-top:0;">Inbound Volume by Day</div><div class="cbox"><canvas id="c1"></canvas></div></div>
     <div><div class="lbl" style="margin-top:0;">Answered ≤30s by Day (Target 80%)</div><div class="cbox"><canvas id="c2"></canvas></div></div>
   </div>
-  <div class="note">* partial day — voice to <span id="vLat2">Tue 8/18, ~8p CT</span> · email to <span class="eLat">~12:30a CT</span></div>
+  <div class="note">* partial day — voice to <span id="vLat2">~1a CT</span> · email to <span class="eLat">~4:30a CT</span></div>
 
-  <div class="sec">Email <span style="font-weight:400;color:var(--mut);font-size:12px;" id="eStamp">· updated through ~12:30a CT</span></div>
+  <div class="sec">Email <span style="font-weight:400;color:var(--mut);font-size:12px;" id="eStamp">· updated through ~4:30a CT</span></div>
   <div class="grid kpis">
-    <div class="card"><div class="k">Received</div><div class="v" id="keREC2">0</div><div class="n">Wed Aug 19 so far</div></div>
-    <div class="card"><div class="k">Resolved</div><div class="v" id="keRES">0</div><div class="n">Wed Aug 19 so far</div></div>
+    <div class="card"><div class="k">Received</div><div class="v" id="keREC2">10</div><div class="n">Wed Aug 19 so far</div></div>
+    <div class="card"><div class="k">Resolved</div><div class="v" id="keRES">42</div><div class="n">Wed Aug 19 so far</div></div>
     <!-- FRT stays on the MATURED window (d0..yesterday), NOT today: a ticket created an hour ago has not
          had 4 hours to be replied to, so scoring today understates it badly and build_dashboards' frt
          query deliberately stops at mature_end. Today would read "—" forever. -->
@@ -127,19 +127,19 @@
       <tr class="ghost"><td>Sun 8/9</td><td>392</td><td>323</td><td>+69</td><td>37%</td></tr>
       <tr class="ghost"><td>Mon 8/10</td><td>749</td><td>483</td><td>+266</td><td>16%</td></tr>
       <tr class="ghost"><td>Tue 8/11</td><td>734</td><td>508</td><td>+226</td><td>17%</td></tr>
-      <tr class="tot ghost"><td>Aug 5–11</td><td>4,197</td><td>3,003</td><td>+1194</td><td>22%</td></tr>
+      <tr class="tot ghost"><td>Aug 5–11</td><td>4,197</td><td>3,003</td><td>+1194</td><td>21%</td></tr>
       <tr class="wkdiv"><td>Wed 8/12</td><td>670</td><td>447</td><td>+223</td><td class="red">17%</td></tr>
-      <tr><td>Thu 8/13</td><td>612</td><td>659</td><td class="grn">-47</td><td class="red">26%</td></tr>
+      <tr><td>Thu 8/13</td><td>612</td><td>658</td><td class="grn">-46</td><td class="red">25%</td></tr>
       <tr><td>Fri 8/14</td><td>516</td><td>443</td><td>+73</td><td class="red">34%</td></tr>
-      <tr><td>Sat 8/15</td><td>382</td><td>580</td><td class="grn">-198</td><td class="red">49%</td></tr>
+      <tr><td>Sat 8/15</td><td>382</td><td>580</td><td class="grn">-198</td><td class="red">45%</td></tr>
       <tr><td>Sun 8/16</td><td>377</td><td>472</td><td class="grn">-95</td><td class="grn">86%</td></tr>
-      <tr><td>Mon 8/17</td><td>656</td><td>717</td><td class="grn">-61</td><td class="amb">68%</td></tr>
-      <tr><td>Tue 8/18</td><td>600</td><td>695</td><td class="grn">-95</td><td class="grn">91%</td></tr>
-      <tr class="tot"><td>Aug 12–18</td><td>3,813</td><td>4,013</td><td>-200</td><td class="red">36%</td></tr>
-      <tr class="amb" id="eTodayRow"><td>Wed 8/19*</td><td>0</td><td>0</td><td>+0</td><td>—</td></tr>
+      <tr><td>Mon 8/17</td><td>656</td><td>715</td><td class="grn">-59</td><td class="amb">68%</td></tr>
+      <tr><td>Tue 8/18</td><td>606</td><td>720</td><td class="grn">-114</td><td class="grn">85%</td></tr>
+      <tr class="tot"><td>Aug 12–18</td><td>3,819</td><td>4,035</td><td>-216</td><td class="red">36%</td></tr>
+      <tr class="amb" id="eTodayRow"><td>Wed 8/19*</td><td>10</td><td>42</td><td>-32</td><td>—</td></tr>
     </tbody>
   </table>
-  <div class="note">* partial day — email to <span class="eLat">~12:30a CT</span></div>
+  <div class="note">* partial day — email to <span class="eLat">~4:30a CT</span></div>
 
   
   <div class="sec">Customer Satisfaction (CSAT) <span style="font-weight:400;color:var(--mut);font-size:12px;">· week of Aug 10–16</span></div>
@@ -233,13 +233,13 @@
   var days7=['Wed 5','Thu 6','Fri 7','Sat 8','Sun 9','Mon 10','Tue 11','Wed 12','Thu 13','Fri 14','Sat 15','Sun 16','Mon 17','Tue 18','Wed 19*'];
   var wkBlue=['#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#9a6a00'];
   var barVals={id:'barVals',afterDatasetsDraw:function(ch){var x=ch.ctx;(ch.getDatasetMeta(0).data||[]).forEach(function(bar,i){var v=ch.data.datasets[0].data[i];if(v==null)return;x.save();x.fillStyle='#52514e';x.font='600 9.5px -apple-system,BlinkMacSystemFont,sans-serif';x.textAlign='center';x.fillText(v>=1000?((v/1000).toFixed(1).replace(/\.0$/,'')+'k'):v,bar.x,bar.y-3);x.restore();});}};
-  window.C1=new Chart(document.getElementById('c1'),{type:'bar',data:{labels:days7,datasets:[{label:'Inbound volume',data:[806,721,724,388,284,908,787,768,692,590,286,246,733,748,0],backgroundColor:wkBlue,borderRadius:4,maxBarThickness:22}]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:12}},plugins:{legend:{display:false}},scales:{x:bx,y:{grid:{color:grid},ticks:{color:mut,font:{size:11}}}}},plugins:[barVals]});
-  window.C2=new Chart(document.getElementById('c2'),{type:'line',data:{labels:days7,datasets:[{label:'SLA %',data:[77,75,75,66,79,61,66,82,91,93,80,94,87,88,0],borderColor:'#2a78d6',backgroundColor:'#2a78d6',borderWidth:2,tension:0.25,pointRadius:3,pointBackgroundColor:wkBlue,pointBorderColor:wkBlue},{label:'Target 80%',data:days7.map(function(){return 80;}),borderColor:'#e34948',borderWidth:1.5,borderDash:[6,4],pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:bx,y:{min:0,max:110,grid:{color:grid},ticks:{stepSize:20,color:mut,font:{size:11},callback:function(v){return v>100?'':v+'%';}}}}}});
+  window.C1=new Chart(document.getElementById('c1'),{type:'bar',data:{labels:days7,datasets:[{label:'Inbound volume',data:[806,721,724,388,284,908,787,769,692,590,286,246,733,786,2],backgroundColor:wkBlue,borderRadius:4,maxBarThickness:22}]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:12}},plugins:{legend:{display:false}},scales:{x:bx,y:{grid:{color:grid},ticks:{color:mut,font:{size:11}}}}},plugins:[barVals]});
+  window.C2=new Chart(document.getElementById('c2'),{type:'line',data:{labels:days7,datasets:[{label:'SLA %',data:[77,75,75,66,79,61,66,82,91,93,80,94,87,88,100],borderColor:'#2a78d6',backgroundColor:'#2a78d6',borderWidth:2,tension:0.25,pointRadius:3,pointBackgroundColor:wkBlue,pointBorderColor:wkBlue},{label:'Target 80%',data:days7.map(function(){return 80;}),borderColor:'#e34948',borderWidth:1.5,borderDash:[6,4],pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:bx,y:{min:0,max:110,grid:{color:grid},ticks:{stepSize:20,color:mut,font:{size:11},callback:function(v){return v>100?'':v+'%';}}}}}});
   var Z=function(){return [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];};
-  var VOFF={'8/12':[1,1,0,1,2,11,19,43,43,56,74,68,72,68,66,53,49,44,33,33,15,6,9,1],'8/13':[2,0,1,0,2,2,12,51,48,50,63,52,61,50,51,64,44,39,42,34,9,11,2,2],'8/14':[3,1,0,1,2,6,10,34,37,62,64,60,51,47,38,45,45,35,20,10,12,3,3,1],'8/15':[1,1,1,0,2,0,4,7,25,31,30,26,18,31,21,31,16,8,13,10,2,5,2,1],'8/16':[1,1,0,0,0,2,4,5,16,19,13,29,31,12,25,19,14,14,12,15,5,3,4,2],'8/17':[2,0,2,0,1,1,14,18,62,51,69,64,61,73,75,61,47,43,29,25,13,15,7,0],'8/18':[2,1,2,1,0,2,13,20,61,63,77,55,63,67,70,75,70,46,39,18,3,0,0,0],'8/19':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+  var VOFF={'8/12':[1,1,0,1,2,11,19,43,43,56,74,68,72,68,66,54,49,44,33,33,15,6,9,1],'8/13':[2,0,1,0,2,2,12,51,48,50,63,52,61,50,51,64,44,39,42,34,9,11,2,2],'8/14':[3,1,0,1,2,6,10,34,37,62,64,60,51,47,38,45,45,35,20,10,12,3,3,1],'8/15':[1,1,1,0,2,0,4,7,25,31,30,26,18,31,21,31,16,8,13,10,2,5,2,1],'8/16':[1,1,0,0,0,2,4,5,16,19,13,29,31,12,25,19,14,14,12,15,5,3,4,2],'8/17':[2,0,2,0,1,1,14,18,62,51,69,64,61,73,75,61,47,43,29,25,13,15,7,0],'8/18':[2,1,2,1,0,2,13,20,61,63,77,55,63,67,70,75,70,46,39,18,21,11,2,7],'8/19':[1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
   var CHOFF={};
-  var EREC={'8/12':[3,5,5,7,17,36,36,52,49,41,36,47,41,51,46,45,33,38,26,21,19,9,4,3],'8/13':[1,7,6,7,21,38,38,53,35,40,47,37,44,45,35,34,21,25,23,19,17,13,4,2],'8/14':[3,3,3,7,17,39,41,34,38,47,30,33,41,30,33,14,21,19,19,15,10,11,5,3],'8/15':[2,2,6,10,10,16,29,25,30,29,29,20,25,22,9,18,25,18,20,9,18,6,2,2],'8/16':[0,2,2,7,13,12,16,23,16,26,26,25,27,21,21,30,17,27,23,17,11,7,3,5],'8/17':[0,4,3,7,15,21,45,33,41,65,62,43,41,54,37,35,36,31,29,23,15,8,4,4],'8/18':[4,4,5,17,17,23,33,30,42,58,42,48,45,35,34,36,34,28,25,22,11,6,1,0],'8/19':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
-  var ECLO={'8/12':[8,17,24,14,6,9,11,19,29,24,32,41,36,38,24,18,19,9,22,12,6,6,10,13],'8/13':[7,7,14,13,14,22,22,216,38,25,47,53,29,39,30,23,17,4,4,7,4,6,6,12],'8/14':[11,8,19,8,6,5,20,25,22,29,40,29,33,25,28,24,23,10,15,9,11,9,9,25],'8/15':[28,45,36,10,10,38,30,25,24,40,55,34,29,34,33,26,18,8,16,10,11,4,7,9],'8/16':[8,7,9,11,16,19,21,29,27,29,37,20,29,30,19,22,23,24,24,18,10,14,10,16],'8/17':[6,17,8,17,18,22,19,28,25,41,51,51,44,64,35,29,25,37,44,43,30,30,18,15],'8/18':[6,10,14,16,16,13,29,26,40,51,47,59,59,55,42,49,44,33,26,29,11,14,6,0],'8/19':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+  var EREC={'8/12':[3,5,5,7,17,36,36,52,49,41,36,47,41,51,46,45,33,38,26,21,19,9,4,3],'8/13':[1,7,6,7,21,38,38,53,35,40,47,37,44,45,35,34,21,25,23,19,17,13,4,2],'8/14':[3,3,3,7,17,39,41,34,38,47,30,33,41,30,33,14,21,19,19,15,10,11,5,3],'8/15':[2,2,6,10,10,16,29,25,30,29,29,20,25,22,9,18,25,18,20,9,18,6,2,2],'8/16':[0,2,2,7,13,12,16,23,16,26,26,25,27,21,21,30,17,27,23,17,11,7,3,5],'8/17':[0,4,3,7,15,21,45,33,41,65,62,43,41,54,37,35,36,31,29,23,15,8,4,4],'8/18':[4,4,5,17,17,23,33,30,42,58,42,48,45,35,34,36,34,28,25,22,11,6,3,4],'8/19':[3,5,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+  var ECLO={'8/12':[8,17,24,14,6,9,11,19,29,24,32,41,36,38,24,18,19,9,22,12,6,6,10,13],'8/13':[6,7,14,13,14,22,22,216,38,25,47,53,29,39,30,23,17,4,4,7,4,6,6,12],'8/14':[11,8,19,8,6,5,20,25,22,29,40,29,33,25,28,24,23,10,15,9,11,9,9,25],'8/15':[28,45,36,10,10,38,30,25,24,40,55,34,29,34,33,26,18,8,16,10,11,4,7,9],'8/16':[8,7,9,11,16,19,21,29,27,29,37,20,29,30,19,22,23,24,24,18,10,14,10,16],'8/17':[6,17,8,17,18,22,19,28,25,41,51,51,44,64,34,29,25,37,44,43,29,30,18,15],'8/18':[6,10,14,16,16,13,29,26,40,51,47,59,59,55,42,49,44,33,26,29,11,14,11,20],'8/19':[21,10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
   var hrs=[]; for(var h=0;h<24;h++){hrs.push((h%12===0?12:h%12)+(h<12?'a':'p'));}
   var sum=function(a){return a.reduce(function(x,y){return x+y;},0);};
   var xh={grid:{display:false},ticks:{color:mut,font:{size:10},maxRotation:0,autoSkip:false,callback:function(v,i){return i%3===0?hrs[i]:'';}}};
