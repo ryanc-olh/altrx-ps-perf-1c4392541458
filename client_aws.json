@@ -1,7 +1,7 @@
 {
  "client": "altrx",
- "generated_at": "2026-08-22T01:27:48-05:00",
- "generated_at_ct": "1:27am",
+ "generated_at": "2026-08-22T05:24:37-05:00",
+ "generated_at_ct": "5:24am",
  "window": {
   "start": "2026-08-15",
   "end": "2026-08-21"
@@ -209,17 +209,17 @@
    }
   },
   "today": {
-   "offered": 11,
-   "answered": 14,
-   "offered_live": 11,
-   "answered_live": 14,
-   "answered_in_sl": 11,
-   "short_abandoned": 0,
-   "sl_den": 11,
+   "offered": 26,
+   "answered": 28,
+   "offered_live": 26,
+   "answered_live": 28,
+   "answered_in_sl": 24,
+   "short_abandoned": 2,
+   "sl_den": 26,
    "sl": 100.0,
    "sl_answered_only": 100.0,
-   "asa_s": 28.4,
-   "aht_s": 670.7
+   "asa_s": 18.8,
+   "aht_s": 589.4
   }
  },
  "hourly_voice": {
@@ -1769,40 +1769,40 @@
     3
    ],
    [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    4,
+    4,
+    36466,
+    4,
+    6,
+    1,
+    6
    ],
    [
+    2,
+    2,
+    17514,
+    2,
+    1,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    1
    ],
    [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    6,
+    5,
+    47230,
+    6,
+    7,
+    1,
+    7
    ],
    [
+    2,
+    2,
+    15832,
+    2,
+    1,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    1
    ],
    [
     0,
@@ -1967,6 +1967,11 @@
     0
    ]
   ]
+ },
+ "email_live": {
+  "rec": 30,
+  "clo": 41,
+  "asof_ct": "5:22am"
  },
  "errors": [],
  "ok": true
