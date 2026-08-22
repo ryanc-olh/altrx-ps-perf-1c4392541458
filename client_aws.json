@@ -1,7 +1,7 @@
 {
  "client": "altrx",
- "generated_at": "2026-08-22T05:24:37-05:00",
- "generated_at_ct": "5:24am",
+ "generated_at": "2026-08-22T09:21:33-05:00",
+ "generated_at_ct": "9:21am",
  "window": {
   "start": "2026-08-15",
   "end": "2026-08-21"
@@ -170,56 +170,56 @@
    },
    "2026-08-19": {
     "offered": 3139,
-    "answered": 4615,
+    "answered": 4616,
     "offered_live": 3139,
-    "answered_live": 4615,
+    "answered_live": 4616,
     "answered_in_sl": 2345,
     "short_abandoned": 20,
     "sl_den": 3139,
     "sl": 75.34,
     "sl_answered_only": 75.18,
     "asa_s": 31.6,
-    "aht_s": 809.5
+    "aht_s": 855.7
    },
    "2026-08-20": {
     "offered": 3099,
-    "answered": 4464,
+    "answered": 4465,
     "offered_live": 3099,
-    "answered_live": 4464,
+    "answered_live": 4465,
     "answered_in_sl": 2259,
     "short_abandoned": 24,
     "sl_den": 3099,
     "sl": 73.67,
     "sl_answered_only": 73.46,
     "asa_s": 37.1,
-    "aht_s": 602.4
+    "aht_s": 636.1
    },
    "2026-08-21": {
     "offered": 4218,
-    "answered": 5506,
+    "answered": 5508,
     "offered_live": 4218,
-    "answered_live": 5506,
+    "answered_live": 5508,
     "answered_in_sl": 1896,
     "short_abandoned": 57,
     "sl_den": 4218,
     "sl": 46.3,
     "sl_answered_only": 45.57,
     "asa_s": 73.4,
-    "aht_s": 523.6
+    "aht_s": 541.0
    }
   },
   "today": {
-   "offered": 26,
-   "answered": 28,
-   "offered_live": 26,
-   "answered_live": 28,
-   "answered_in_sl": 24,
-   "short_abandoned": 2,
-   "sl_den": 26,
-   "sl": 100.0,
-   "sl_answered_only": 100.0,
-   "asa_s": 18.8,
-   "aht_s": 589.4
+   "offered": 379,
+   "answered": 450,
+   "offered_live": 379,
+   "answered_live": 450,
+   "answered_in_sl": 203,
+   "short_abandoned": 4,
+   "sl_den": 379,
+   "sl": 54.62,
+   "sl_answered_only": 54.13,
+   "asa_s": 47.0,
+   "aht_s": 475.0
   }
  },
  "hourly_voice": {
@@ -1286,10 +1286,10 @@
     85
    ],
    [
-    91,
+    92,
     43,
-    2706349,
-    91,
+    2736090,
+    92,
     56,
     0,
     56
@@ -1432,10 +1432,10 @@
     264
    ],
    [
-    372,
+    373,
     226,
-    4430693,
-    372,
+    4442603,
+    373,
     229,
     0,
     229
@@ -1659,10 +1659,10 @@
     413
    ],
    [
-    508,
+    509,
     83,
-    71203898,
-    508,
+    71344064,
+    509,
     433,
     10,
     433
@@ -1722,10 +1722,10 @@
     89
    ],
    [
-    71,
+    72,
     42,
-    501620,
-    71,
+    508685,
+    72,
     40,
     1,
     40
@@ -1796,49 +1796,49 @@
     7
    ],
    [
+    6,
+    6,
+    47156,
+    6,
+    8,
+    0,
+    8
+   ],
+   [
+    43,
+    33,
+    432866,
+    43,
+    39,
+    0,
+    39
+   ],
+   [
+    88,
+    28,
+    6695201,
+    88,
+    82,
+    0,
+    82
+   ],
+   [
+    222,
+    85,
+    12190222,
+    222,
+    159,
     2,
-    2,
-    15832,
-    2,
-    1,
-    0,
-    1
+    159
    ],
    [
+    65,
+    29,
+    2434040,
+    65,
+    66,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    66
    ],
    [
     0,
@@ -1969,9 +1969,9 @@
   ]
  },
  "email_live": {
-  "rec": 30,
-  "clo": 41,
-  "asof_ct": "5:22am"
+  "rec": 176,
+  "clo": 166,
+  "asof_ct": "9:18am"
  },
  "errors": [],
  "ok": true
