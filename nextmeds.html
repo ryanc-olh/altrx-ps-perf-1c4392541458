@@ -45,37 +45,41 @@
   .daysel{font-size:13px;padding:7px 34px 7px 12px;border:1px solid var(--bds);border-radius:6px;background:#fff;color:var(--ink);cursor:pointer;line-height:1.2;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2352514e' d='M2 4.5l4 4 4-4z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
   .daysel:hover{border-color:#2a78d6;}
   .daysel:focus{outline:none;border-color:#2a78d6;box-shadow:0 0 0 2px rgba(42,120,214,0.25);}
+  .winrow{display:flex;gap:8px;margin:6px 0 14px;flex-wrap:wrap;}
+  .winbtn{font-family:inherit;font-size:12.5px;font-weight:600;padding:6px 14px;border:1px solid var(--bds);border-radius:99px;background:#fff;color:var(--sec);cursor:pointer;}
+  .winbtn:hover{border-color:#2a78d6;color:var(--ink);}
+  .winbtn.active{background:#eef1f6;color:#1f3a5f;border-color:#9fb3cc;}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>NextMeds — Patient Support Performance</h1>
-  <div class="sub">Aug 18–24, 2026 · Voice · Email · NextMeds · Central Time · <b id="hdrStamp">updated 9:26am CDT</b></div>
+  <div class="sub">Aug 18–24, 2026 · Voice · Email · NextMeds · Central Time · <b id="hdrStamp">updated 12:26pm CDT</b></div>
   
   <div id="pane-sum">
 
   <div class="sec" style="border-color:var(--amb);">Today so far · Tue Aug 25 <span style="font-weight:400;color:var(--amb);font-size:13px;">— in progress</span></div>
   <div class="grid kpis">
-    <div class="card"><div class="k">Voice — calls</div><div class="v" id="tvV">0</div><div class="n" id="tvVn">as of Mon 8/24, ~11:30p CT</div></div>
-    <div class="card"><div class="k">Email — received</div><div class="v" id="keREC">77</div><div class="n" id="keLat">as of ~9a CT</div></div>
-    <div class="card"><div class="k">Email — open backlog</div><div class="v">1,460</div><div class="n">as of ~9a CT</div></div>
+    <div class="card"><div class="k">Voice — calls</div><div class="v" id="tvV">49</div><div class="n" id="tvVn">as of ~8:30a CT</div></div>
+    <div class="card"><div class="k">Email — received</div><div class="v" id="keREC">180</div><div class="n" id="keLat">as of ~12p CT</div></div>
+    <div class="card"><div class="k">Email — open backlog</div><div class="v">1,386</div><div class="n">as of ~12p CT</div></div>
     
   </div>
 
   <!-- id so the live patcher refreshes this. It is a BUILD-TIME substitution, so while the tile above
        said "updated 11:44am" this still read 11:00 and made a perfectly healthy feed look dead
        (Ryan 2026-08-14). Two stamps for the same feed must never disagree. -->
-  <div class="sec">Voice <span style="font-weight:400;color:var(--mut);font-size:12px;" id="vStamp">· updated through Mon 8/24, ~11:30p CT</span></div>
+  <div class="sec">Voice <span style="font-weight:400;color:var(--mut);font-size:12px;" id="vStamp">· updated through ~8:30a CT</span></div>
   
   <div class="grid kpis">
     <!-- ids so the 5-minute feed can patch these. They report TODAY, so without patching they froze at
          build time while the today ROW beside them kept updating live -- the tiles read 2,130/41% against
          a row saying 2,339/38% (2026-08-14). Abandonment is deliberately given NO id: it is patient-level
          from the build and the feed cannot compute it, exactly as the row's abandon cell is left alone. -->
-    <div class="card"><div class="k">Answered ≤30s</div><div class="v " id="kvSL">—</div><div class="n">Tue Aug 25 so far · Target 80%</div></div>
-    <div class="card"><div class="k">Abandonment</div><div class="v ">—</div><div class="n">Tue Aug 25 so far · Target &lt;5%</div></div>
-    <div class="card"><div class="k">Avg Speed of Answer</div><div class="v " id="kvASA">—</div><div class="n">Tue Aug 25 so far · Target ≤30s</div></div>
-    <div class="card"><div class="k">Inbound Volume</div><div class="v" id="kvVOL">—</div><div class="n">Tue Aug 25 so far</div></div>
+    <div class="card"><div class="k">Answered ≤30s</div><div class="v amb" id="kvSL">69%</div><div class="n">Tue Aug 25 so far · Target 80%</div></div>
+    <div class="card"><div class="k">Abandonment</div><div class="v grn">0%</div><div class="n">Tue Aug 25 so far · Target &lt;5%</div></div>
+    <div class="card"><div class="k">Avg Speed of Answer</div><div class="v amb" id="kvASA">0.7m</div><div class="n">Tue Aug 25 so far · Target ≤30s</div></div>
+    <div class="card"><div class="k">Inbound Volume</div><div class="v" id="kvVOL">49</div><div class="n">Tue Aug 25 so far</div></div>
   </div>
   <div class="lbl">By Day <span style="font-weight:400;color:var(--mut);font-size:12px;">· Aug 11–24 plus today</span></div>
   <table>
@@ -85,36 +89,36 @@
       <tr class="ghost"><td>Wed 8/12</td><td>359</td><td>325</td><td>68%</td><td>3.0m</td><td>5%</td></tr>
       <tr class="ghost"><td>Thu 8/13</td><td>347</td><td>330</td><td>80%</td><td>1.4m</td><td>4%</td></tr>
       <tr class="ghost"><td>Fri 8/14</td><td>319</td><td>306</td><td>82%</td><td>0.9m</td><td>2%</td></tr>
-      <tr class="ghost"><td>Sat 8/15</td><td>280</td><td>258</td><td>75%</td><td>2.6m</td><td>4%</td></tr>
+      <tr class="ghost"><td>Sat 8/15</td><td>281</td><td>258</td><td>74%</td><td>2.6m</td><td>4%</td></tr>
       <tr class="ghost"><td>Sun 8/16</td><td>181</td><td>175</td><td>88%</td><td>0.8m</td><td>1%</td></tr>
       <tr class="ghost"><td>Mon 8/17</td><td>494</td><td>462</td><td>78%</td><td>1.5m</td><td>4%</td></tr>
-      <tr class="tot ghost"><td>Aug 11–17</td><td>2,355</td><td>2,196</td><td>75%</td><td>1.8m</td><td>3%</td></tr>
+      <tr class="tot ghost"><td>Aug 11–17</td><td>2,356</td><td>2,196</td><td>75%</td><td>1.8m</td><td>3%</td></tr>
       <tr class="wkdiv"><td>Tue 8/18</td><td>526</td><td>497</td><td class="amb">75%</td><td>1.1m</td><td>3%</td></tr>
       <tr><td>Wed 8/19</td><td>535</td><td>516</td><td class="amb">73%</td><td>0.9m</td><td>2%</td></tr>
-      <tr><td>Thu 8/20</td><td>500</td><td>481</td><td class="amb">74%</td><td>0.7m</td><td>2%</td></tr>
-      <tr><td>Fri 8/21</td><td>737</td><td>705</td><td class="red">47%</td><td>1.2m</td><td>1%</td></tr>
+      <tr><td>Thu 8/20</td><td>501</td><td>482</td><td class="amb">75%</td><td>0.7m</td><td>2%</td></tr>
+      <tr><td>Fri 8/21</td><td>739</td><td>706</td><td class="red">47%</td><td>1.2m</td><td>1%</td></tr>
       <tr><td>Sat 8/22</td><td>378</td><td>362</td><td class="amb">74%</td><td>0.7m</td><td>1%</td></tr>
       <tr><td>Sun 8/23</td><td>261</td><td>258</td><td class="grn">98%</td><td>0.3m</td><td>0%</td></tr>
-      <tr><td>Mon 8/24</td><td>869</td><td>845</td><td class="amb">62%</td><td>0.8m</td><td>1%</td></tr>
-      <tr class="tot"><td>Aug 18–24</td><td>3,806</td><td>3,664</td><td class="amb">68%</td><td>0.9m</td><td>1%</td></tr>
-      <tr class="amb" id="vTodayRow"><td>Tue 8/25*</td><td>0</td><td>0</td><td>0%</td><td>0.0m</td><td>—</td></tr>
+      <tr><td>Mon 8/24</td><td>870</td><td>846</td><td class="amb">62%</td><td>0.8m</td><td>1%</td></tr>
+      <tr class="tot"><td>Aug 18–24</td><td>3,810</td><td>3,667</td><td class="amb">68%</td><td>0.9m</td><td>1%</td></tr>
+      <tr class="amb" id="vTodayRow"><td>Tue 8/25*</td><td>49</td><td>49</td><td>69%</td><td>0.7m</td><td>0%</td></tr>
     </tbody>
   </table>
   <div class="grid charts" style="margin-top:20px;">
     <div><div class="lbl" style="margin-top:0;">Inbound Volume by Day</div><div class="cbox"><canvas id="c1"></canvas></div></div>
     <div><div class="lbl" style="margin-top:0;">Answered ≤30s by Day (Target 80%)</div><div class="cbox"><canvas id="c2"></canvas></div></div>
   </div>
-  <div class="note">* partial day — voice to <span id="vLat2">Mon 8/24, ~11:30p CT</span> · email to <span class="eLat">~9a CT</span></div>
+  <div class="note">* partial day — voice to <span id="vLat2">~8:30a CT</span> · email to <span class="eLat">~12p CT</span></div>
 
-  <div class="sec">Email <span style="font-weight:400;color:var(--mut);font-size:12px;" id="eStamp">· updated through ~9a CT</span></div>
+  <div class="sec">Email <span style="font-weight:400;color:var(--mut);font-size:12px;" id="eStamp">· updated through ~12p CT</span></div>
   <div class="grid kpis">
-    <div class="card"><div class="k">Received</div><div class="v" id="keREC2">77</div><div class="n">Tue Aug 25 so far</div></div>
-    <div class="card"><div class="k">Resolved</div><div class="v" id="keRES">89</div><div class="n">Tue Aug 25 so far</div></div>
+    <div class="card"><div class="k">Received</div><div class="v" id="keREC2">180</div><div class="n">Tue Aug 25 so far</div></div>
+    <div class="card"><div class="k">Resolved</div><div class="v" id="keRES">288</div><div class="n">Tue Aug 25 so far</div></div>
     <!-- FRT stays on the MATURED window (d0..yesterday), NOT today: a ticket created an hour ago has not
          had 4 hours to be replied to, so scoring today understates it badly and build_dashboards' frt
          query deliberately stops at mature_end. Today would read "—" forever. -->
     <div class="card"><div class="k">First Response ≤4hr</div><div class="v red">28%</div><div class="n">Aug 18–24 · of replied emails</div></div>
-    <div class="card"><div class="k">First Response ≤24hr</div><div class="v red">41%</div><div class="n">Aug 18–24 · of replied emails</div></div>
+    <div class="card"><div class="k">First Response ≤24hr</div><div class="v red">40%</div><div class="n">Aug 18–24 · of replied emails</div></div>
   </div>
   <div class="lbl">By Day <span style="font-weight:400;color:var(--mut);font-size:12px;">· Aug 11–24 plus today</span></div>
   <table>
@@ -128,20 +132,18 @@
       <tr class="ghost"><td>Sun 8/16</td><td>172</td><td>235</td><td>-63</td><td>41%</td></tr>
       <tr class="ghost"><td>Mon 8/17</td><td>355</td><td>185</td><td>+170</td><td>16%</td></tr>
       <tr class="tot ghost"><td>Aug 11–17</td><td>1,621</td><td>1,130</td><td>+491</td><td>26%</td></tr>
-      <tr class="wkdiv"><td>Tue 8/18</td><td>389</td><td>273</td><td>+116</td><td class="red">27%</td></tr>
+      <tr class="wkdiv"><td>Tue 8/18</td><td>389</td><td>272</td><td>+117</td><td class="red">27%</td></tr>
       <tr><td>Wed 8/19</td><td>784</td><td>319</td><td>+465</td><td class="red">20%</td></tr>
-      <tr><td>Thu 8/20</td><td>471</td><td>327</td><td>+144</td><td class="red">23%</td></tr>
-      <tr><td>Fri 8/21</td><td>405</td><td>283</td><td>+122</td><td class="red">18%</td></tr>
-      <tr><td>Sat 8/22</td><td>322</td><td>256</td><td>+66</td><td class="red">42%</td></tr>
-      <tr><td>Sun 8/23</td><td>1,352</td><td>585</td><td>+767</td><td class="grn">70%</td></tr>
-      <tr><td>Mon 8/24</td><td>564</td><td>1,524</td><td class="grn">-960</td><td class="grn">89%</td></tr>
-      <tr class="tot"><td>Aug 18–24</td><td>4,287</td><td>3,567</td><td>+720</td><td class="red">28%</td></tr>
-      <tr class="amb" id="eTodayRow"><td>Tue 8/25*</td><td>77</td><td>89</td><td>-12</td><td>—</td></tr>
+      <tr><td>Thu 8/20</td><td>471</td><td>326</td><td>+145</td><td class="red">22%</td></tr>
+      <tr><td>Fri 8/21</td><td>405</td><td>282</td><td>+123</td><td class="red">16%</td></tr>
+      <tr><td>Sat 8/22</td><td>322</td><td>254</td><td>+68</td><td class="red">40%</td></tr>
+      <tr><td>Sun 8/23</td><td>1,352</td><td>584</td><td>+768</td><td class="grn">70%</td></tr>
+      <tr><td>Mon 8/24</td><td>564</td><td>1,508</td><td class="grn">-944</td><td class="grn">89%</td></tr>
+      <tr class="tot"><td>Aug 18–24</td><td>4,287</td><td>3,545</td><td>+742</td><td class="red">28%</td></tr>
+      <tr class="amb" id="eTodayRow"><td>Tue 8/25*</td><td>180</td><td>288</td><td>-108</td><td>—</td></tr>
     </tbody>
   </table>
-  <div class="note">* partial day — email to <span class="eLat">~9a CT</span></div>
-
-  
+  <div class="note">* partial day — email to <span class="eLat">~12p CT</span></div>
 
   
 
@@ -170,6 +172,70 @@
     <!--CHATHOUR--><div><div class="lbl" style="margin-top:0;">Chat — Inbound Volume by Hour</div><div class="cbox"><canvas id="cx"></canvas></div></div><!--/CHATHOUR-->
   </div>
   </div><!--/pane-sum-->
+  
+
+  
+
+  
+  <div class="sec">Reasons for Contact <span id="rfcHdr" style="font-weight:400;color:var(--mut);font-size:12px;"></span></div>
+  <div class="winrow" role="tablist">
+    <button type="button" class="winbtn active" data-w="7d">Last 7 days</button>
+    <button type="button" class="winbtn" data-w="14d">Last 14 days</button>
+    <button type="button" class="winbtn" data-w="30d">Last 30 days</button>
+    <button type="button" class="winbtn" data-w="mtd">Month to date</button>
+  </div>
+  <div class="grid kpis" id="rfcKpi"></div>
+  <div class="lbl">Reasons for Contact <span style="font-weight:400;color:var(--mut);">— share of analyzed calls</span></div>
+  <table>
+    <thead><tr><th>Topic</th><th>Calls</th><th>Share</th></tr></thead>
+    <tbody id="rfcTbl"></tbody>
+  </table>
+  <div class="note" id="rfcNote"></div>
+  <script>
+  (function(){
+    var DAILY = {"2026-08-21":{"answered":737,"categorized":735,"topics":{"Scheduling":179,"Order status":303,"Cancellation":173,"Refund":147,"Medication":147,"Labs":6,"Refill / intake":41,"Provider no-show":7}},"2026-08-11":{"answered":305,"categorized":304,"topics":{"Scheduling":51,"Order status":147,"Cancellation":63,"Refund":41,"Medication":85,"Labs":2,"Refill / intake":16,"Provider no-show":0}},"2026-08-24":{"answered":894,"categorized":893,"topics":{"Scheduling":157,"Order status":406,"Cancellation":192,"Refund":153,"Medication":186,"Labs":6,"Refill / intake":51,"Provider no-show":1}},"2026-08-14":{"answered":264,"categorized":264,"topics":{"Scheduling":39,"Order status":149,"Cancellation":64,"Refund":50,"Medication":89,"Labs":0,"Refill / intake":16,"Provider no-show":1}},"2026-07-19":{"answered":1,"categorized":1,"topics":{"Scheduling":0,"Order status":1,"Cancellation":0,"Refund":1,"Medication":0,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-23":{"answered":275,"categorized":275,"topics":{"Scheduling":52,"Order status":122,"Cancellation":56,"Refund":54,"Medication":70,"Labs":0,"Refill / intake":14,"Provider no-show":0}},"2026-08-04":{"answered":56,"categorized":56,"topics":{"Scheduling":6,"Order status":19,"Cancellation":10,"Refund":9,"Medication":17,"Labs":0,"Refill / intake":1,"Provider no-show":0}},"2026-08-20":{"answered":469,"categorized":468,"topics":{"Scheduling":125,"Order status":219,"Cancellation":117,"Refund":96,"Medication":112,"Labs":3,"Refill / intake":25,"Provider no-show":0}},"2026-07-18":{"answered":1,"categorized":1,"topics":{"Scheduling":1,"Order status":1,"Cancellation":0,"Refund":0,"Medication":1,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-02":{"answered":4,"categorized":4,"topics":{"Scheduling":2,"Order status":1,"Cancellation":1,"Refund":1,"Medication":1,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-17":{"answered":439,"categorized":439,"topics":{"Scheduling":85,"Order status":226,"Cancellation":85,"Refund":82,"Medication":126,"Labs":1,"Refill / intake":19,"Provider no-show":2}},"2026-08-07":{"answered":234,"categorized":234,"topics":{"Scheduling":39,"Order status":71,"Cancellation":57,"Refund":49,"Medication":74,"Labs":3,"Refill / intake":11,"Provider no-show":0}},"2026-08-15":{"answered":249,"categorized":249,"topics":{"Scheduling":46,"Order status":105,"Cancellation":50,"Refund":51,"Medication":74,"Labs":1,"Refill / intake":12,"Provider no-show":0}},"2026-08-05":{"answered":64,"categorized":64,"topics":{"Scheduling":15,"Order status":20,"Cancellation":11,"Refund":7,"Medication":20,"Labs":0,"Refill / intake":2,"Provider no-show":0}},"2026-08-01":{"answered":7,"categorized":7,"topics":{"Scheduling":2,"Order status":1,"Cancellation":5,"Refund":3,"Medication":4,"Labs":0,"Refill / intake":0,"Provider no-show":1}},"2026-07-20":{"answered":1,"categorized":1,"topics":{"Scheduling":0,"Order status":0,"Cancellation":0,"Refund":0,"Medication":0,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-25":{"answered":236,"categorized":236,"topics":{"Scheduling":47,"Order status":126,"Cancellation":58,"Refund":33,"Medication":56,"Labs":0,"Refill / intake":12,"Provider no-show":1}},"2026-08-18":{"answered":475,"categorized":474,"topics":{"Scheduling":111,"Order status":224,"Cancellation":96,"Refund":78,"Medication":122,"Labs":2,"Refill / intake":21,"Provider no-show":2}},"2026-08-03":{"answered":41,"categorized":41,"topics":{"Scheduling":13,"Order status":8,"Cancellation":3,"Refund":3,"Medication":14,"Labs":0,"Refill / intake":1,"Provider no-show":0}},"2026-08-12":{"answered":305,"categorized":305,"topics":{"Scheduling":45,"Order status":175,"Cancellation":67,"Refund":50,"Medication":94,"Labs":1,"Refill / intake":15,"Provider no-show":1}},"2026-08-16":{"answered":200,"categorized":200,"topics":{"Scheduling":43,"Order status":75,"Cancellation":45,"Refund":38,"Medication":65,"Labs":1,"Refill / intake":8,"Provider no-show":0}},"2026-07-31":{"answered":8,"categorized":8,"topics":{"Scheduling":0,"Order status":6,"Cancellation":2,"Refund":0,"Medication":1,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-07-17":{"answered":4,"categorized":4,"topics":{"Scheduling":1,"Order status":0,"Cancellation":0,"Refund":0,"Medication":1,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-07-25":{"answered":2,"categorized":2,"topics":{"Scheduling":1,"Order status":0,"Cancellation":0,"Refund":0,"Medication":1,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-22":{"answered":340,"categorized":340,"topics":{"Scheduling":86,"Order status":129,"Cancellation":84,"Refund":72,"Medication":75,"Labs":2,"Refill / intake":16,"Provider no-show":0}},"2026-07-26":{"answered":3,"categorized":3,"topics":{"Scheduling":0,"Order status":0,"Cancellation":3,"Refund":2,"Medication":0,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-13":{"answered":318,"categorized":318,"topics":{"Scheduling":31,"Order status":165,"Cancellation":69,"Refund":60,"Medication":89,"Labs":0,"Refill / intake":17,"Provider no-show":1}},"2026-07-29":{"answered":7,"categorized":7,"topics":{"Scheduling":1,"Order status":2,"Cancellation":2,"Refund":0,"Medication":1,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-10":{"answered":236,"categorized":235,"topics":{"Scheduling":41,"Order status":124,"Cancellation":61,"Refund":33,"Medication":84,"Labs":3,"Refill / intake":10,"Provider no-show":0}},"2026-07-27":{"answered":3,"categorized":3,"topics":{"Scheduling":2,"Order status":3,"Cancellation":0,"Refund":1,"Medication":0,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-19":{"answered":510,"categorized":508,"topics":{"Scheduling":114,"Order status":236,"Cancellation":129,"Refund":108,"Medication":153,"Labs":2,"Refill / intake":33,"Provider no-show":3}},"2026-08-09":{"answered":130,"categorized":129,"topics":{"Scheduling":24,"Order status":36,"Cancellation":29,"Refund":21,"Medication":50,"Labs":1,"Refill / intake":3,"Provider no-show":1}},"2026-08-08":{"answered":116,"categorized":116,"topics":{"Scheduling":22,"Order status":48,"Cancellation":28,"Refund":20,"Medication":41,"Labs":0,"Refill / intake":5,"Provider no-show":2}},"2026-07-30":{"answered":6,"categorized":6,"topics":{"Scheduling":2,"Order status":2,"Cancellation":1,"Refund":1,"Medication":2,"Labs":0,"Refill / intake":0,"Provider no-show":0}},"2026-08-06":{"answered":156,"categorized":156,"topics":{"Scheduling":23,"Order status":43,"Cancellation":24,"Refund":18,"Medication":48,"Labs":0,"Refill / intake":4,"Provider no-show":1}},"2026-07-28":{"answered":3,"categorized":3,"topics":{"Scheduling":2,"Order status":0,"Cancellation":0,"Refund":0,"Medication":2,"Labs":0,"Refill / intake":0,"Provider no-show":0}}};
+    var TOPIC_ORDER = ["Order status","Cancellation","Scheduling","Medication","Refund","Refill / intake","Labs","Provider no-show"];
+    var dates = Object.keys(DAILY).sort();
+    if(!dates.length) return;
+    var today = new Date(dates[dates.length-1]+'T12:00:00');
+    var yesterday = new Date(today); yesterday.setDate(yesterday.getDate()-1);
+    function isoDaysBack(end, n){ var out=[]; for(var i=0;i<n;i++){ var d=new Date(end); d.setDate(d.getDate()-i); out.push(d.toISOString().slice(0,10)); } return out; }
+    function monthToDate(end){ var out=[]; var d=new Date(end.getFullYear(), end.getMonth(), 1); while(d<=end){ out.push(d.toISOString().slice(0,10)); d.setDate(d.getDate()+1); } return out; }
+    var WINDOWS = {
+      "7d": isoDaysBack(yesterday, 7), "14d": isoDaysBack(yesterday, 14), "30d": isoDaysBack(yesterday, 30),
+      "mtd": monthToDate(today)
+    };
+    var WINLABEL = {"7d":"Last 7 days","14d":"Last 14 days","30d":"Last 30 days","mtd":"Month to date"};
+    var curWin = "7d";
+    function fmt(n){ n=Math.round(n||0); return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+    function sumWindow(winKey){
+      var days = WINDOWS[winKey];
+      var out = {answered:0, categorized:0, topics:{}}; var have=0;
+      TOPIC_ORDER.forEach(function(t){ out.topics[t]=0; });
+      days.forEach(function(d){ var row=DAILY[d]; if(!row) return; have++;
+        out.answered += row.answered||0; out.categorized += row.categorized||0;
+        TOPIC_ORDER.forEach(function(t){ out.topics[t] += (row.topics && row.topics[t]) || 0; }); });
+      out._have=have; out._req=days.length; return out;
+    }
+    function render(){
+      document.querySelectorAll('.winbtn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-w')===curWin); });
+      var w = sumWindow(curWin);
+      document.getElementById('rfcHdr').textContent = '· ' + WINLABEL[curWin] + (w._have<w._req ? ' (' + w._have + ' of ' + w._req + ' days available)' : '');
+      var topReason = TOPIC_ORDER.slice().sort(function(a,b){ return w.topics[b]-w.topics[a]; })[0];
+      document.getElementById('rfcKpi').innerHTML =
+        '<div class="card"><div class="k">Calls Analyzed</div><div class="v">'+fmt(w.categorized)+'</div><div class="n">of '+fmt(w.answered)+' answered calls</div></div>'+
+        '<div class="card"><div class="k">Top Reason</div><div class="v" style="font-size:18px;">'+topReason+'</div><div class="n">'+(w.categorized?Math.round(100*w.topics[topReason]/w.categorized):0)+'% of analyzed calls</div></div>';
+      var rows = TOPIC_ORDER.slice().sort(function(a,b){ return w.topics[b]-w.topics[a]; });
+      document.getElementById('rfcTbl').innerHTML = rows.map(function(t){
+        var v=w.topics[t], share=w.categorized?Math.round(100*v/w.categorized):0;
+        return '<tr><td>'+t+'</td><td>'+fmt(v)+'</td><td>'+share+'%</td></tr>';
+      }).join('');
+      document.getElementById('rfcNote').textContent = 'Shares are of ' + fmt(w.categorized) + ' analyzed calls; a call can reflect more than one reason, so shares don’t sum to 100%.';
+    }
+    document.querySelectorAll('.winbtn').forEach(function(b){ b.addEventListener('click', function(){ curWin = b.getAttribute('data-w'); render(); }); });
+    render();
+  })();
+  </script>
   
 </div>
 
@@ -214,13 +280,13 @@
   var days7=['Tue 11','Wed 12','Thu 13','Fri 14','Sat 15','Sun 16','Mon 17','Tue 18','Wed 19','Thu 20','Fri 21','Sat 22','Sun 23','Mon 24','Tue 25*'];
   var wkBlue=['#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#c9c8c0','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#2a78d6','#9a6a00'];
   var barVals={id:'barVals',afterDatasetsDraw:function(ch){var x=ch.ctx;(ch.getDatasetMeta(0).data||[]).forEach(function(bar,i){var v=ch.data.datasets[0].data[i];if(v==null)return;x.save();x.fillStyle='#52514e';x.font='600 9.5px -apple-system,BlinkMacSystemFont,sans-serif';x.textAlign='center';x.fillText(v>=1000?((v/1000).toFixed(1).replace(/\.0$/,'')+'k'):v,bar.x,bar.y-3);x.restore();});}};
-  window.C1=new Chart(document.getElementById('c1'),{type:'bar',data:{labels:days7,datasets:[{label:'Inbound volume',data:[375,359,347,319,280,181,494,526,535,500,737,378,261,869,0],backgroundColor:wkBlue,borderRadius:4,maxBarThickness:22}]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:12}},plugins:{legend:{display:false}},scales:{x:bx,y:{grid:{color:grid},ticks:{color:mut,font:{size:11}}}}},plugins:[barVals]});
-  window.C2=new Chart(document.getElementById('c2'),{type:'line',data:{labels:days7,datasets:[{label:'SLA %',data:[61,68,80,82,75,88,78,75,73,74,47,74,98,62,0],borderColor:'#2a78d6',backgroundColor:'#2a78d6',borderWidth:2,tension:0.25,pointRadius:3,pointBackgroundColor:wkBlue,pointBorderColor:wkBlue},{label:'Target 80%',data:days7.map(function(){return 80;}),borderColor:'#e34948',borderWidth:1.5,borderDash:[6,4],pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:bx,y:{min:0,max:110,grid:{color:grid},ticks:{stepSize:20,color:mut,font:{size:11},callback:function(v){return v>100?'':v+'%';}}}}}});
+  window.C1=new Chart(document.getElementById('c1'),{type:'bar',data:{labels:days7,datasets:[{label:'Inbound volume',data:[375,359,347,319,281,181,494,526,535,501,739,378,261,870,49],backgroundColor:wkBlue,borderRadius:4,maxBarThickness:22}]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:12}},plugins:{legend:{display:false}},scales:{x:bx,y:{grid:{color:grid},ticks:{color:mut,font:{size:11}}}}},plugins:[barVals]});
+  window.C2=new Chart(document.getElementById('c2'),{type:'line',data:{labels:days7,datasets:[{label:'SLA %',data:[61,68,80,82,74,88,78,75,73,75,47,74,98,62,69],borderColor:'#2a78d6',backgroundColor:'#2a78d6',borderWidth:2,tension:0.25,pointRadius:3,pointBackgroundColor:wkBlue,pointBorderColor:wkBlue},{label:'Target 80%',data:days7.map(function(){return 80;}),borderColor:'#e34948',borderWidth:1.5,borderDash:[6,4],pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:bx,y:{min:0,max:110,grid:{color:grid},ticks:{stepSize:20,color:mut,font:{size:11},callback:function(v){return v>100?'':v+'%';}}}}}});
   var Z=function(){return [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];};
-  var VOFF={'8/18':[0,2,0,2,2,4,5,38,27,41,36,48,29,37,39,37,47,36,31,33,10,10,4,8],'8/19':[0,0,1,0,1,1,7,30,29,42,45,44,50,40,42,45,35,41,21,20,17,7,11,6],'8/20':[1,1,0,2,2,5,6,19,34,31,42,51,48,27,42,30,27,41,24,27,14,16,5,5],'8/21':[2,2,0,1,0,4,8,33,33,63,69,75,77,75,73,44,50,36,39,24,15,4,5,5],'8/22':[4,1,1,0,0,1,7,14,18,34,39,41,29,22,26,34,19,14,20,25,13,7,6,3],'8/23':[1,0,0,0,2,1,0,8,12,20,16,23,23,22,21,23,26,14,17,15,5,3,6,3],'8/24':[3,1,0,0,2,0,6,35,53,57,83,84,89,67,82,85,72,51,42,24,15,10,5,3],'8/25':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+  var VOFF={'8/18':[0,2,0,2,2,4,5,38,27,41,36,48,29,37,39,37,47,36,31,33,10,10,4,8],'8/19':[0,0,1,0,1,1,7,30,29,42,45,44,50,40,42,45,35,41,21,20,17,7,11,6],'8/20':[1,1,0,2,2,5,6,19,35,31,42,51,48,27,42,30,27,41,24,27,14,16,5,5],'8/21':[2,2,0,1,0,4,8,33,33,63,69,75,79,75,73,44,50,36,39,24,15,4,5,5],'8/22':[4,1,1,0,0,1,7,14,18,34,39,41,29,22,26,34,19,14,20,25,13,7,6,3],'8/23':[1,0,0,0,2,1,0,8,12,20,16,23,23,22,21,23,26,14,17,15,5,3,6,3],'8/24':[3,1,0,0,2,0,6,35,53,57,83,84,89,67,82,86,72,51,42,24,15,10,5,3],'8/25':[0,0,1,0,2,5,8,15,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
   var CHOFF={};
-  var EREC={'8/18':[4,4,1,3,13,22,16,23,20,28,32,31,21,25,25,27,23,25,14,13,3,9,6,1],'8/19':[1,2,4,9,8,24,22,24,38,32,38,29,24,27,43,108,94,135,59,20,20,17,4,2],'8/20':[0,2,3,8,11,28,22,30,30,42,28,25,30,41,29,21,25,23,20,23,12,9,7,2],'8/21':[4,2,2,8,8,14,14,19,35,29,35,30,25,28,22,23,22,25,12,20,13,6,5,4],'8/22':[3,2,3,4,11,12,24,34,13,17,29,11,22,17,22,16,12,14,15,11,10,5,9,6],'8/23':[0,3,1,4,10,19,206,620,45,91,78,84,74,27,16,17,13,8,8,6,6,4,5,7],'8/24':[2,3,5,4,11,16,30,35,27,53,42,48,35,41,35,27,31,29,31,21,20,13,3,2],'8/25':[2,3,7,6,16,27,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
-  var ECLO={'8/18':[0,5,2,10,4,8,8,12,8,16,25,13,18,24,18,15,12,11,10,15,9,8,8,14],'8/19':[1,7,5,11,8,7,17,8,19,19,27,19,12,20,18,21,11,14,19,25,14,7,6,4],'8/20':[11,4,5,19,7,13,20,15,19,15,22,19,23,29,19,19,13,7,12,14,0,5,11,6],'8/21':[7,5,7,16,11,8,12,22,20,14,17,22,15,25,18,12,11,5,8,17,7,3,0,1],'8/22':[2,1,2,1,7,13,12,13,6,15,16,16,17,22,18,20,18,12,11,8,7,7,5,7],'8/23':[3,10,5,5,8,8,44,47,38,68,55,68,53,54,18,14,15,13,16,12,8,5,9,9],'8/24':[7,8,8,8,15,18,16,17,11,34,34,47,28,21,49,22,22,15,30,15,15,957,113,14],'8/25':[11,12,13,12,13,10,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+  var EREC={'8/18':[4,4,1,3,13,22,16,23,20,28,32,31,21,25,25,27,23,25,14,13,3,9,6,1],'8/19':[1,2,4,9,8,24,22,24,38,32,38,29,24,27,43,108,94,135,59,20,20,17,4,2],'8/20':[0,2,3,8,11,28,22,30,30,42,28,25,30,41,29,21,25,23,20,23,12,9,7,2],'8/21':[4,2,2,8,8,14,14,19,35,29,35,30,25,28,22,23,22,25,12,20,13,6,5,4],'8/22':[3,2,3,4,11,12,24,34,13,17,29,11,22,17,22,16,12,14,15,11,10,5,9,6],'8/23':[0,3,1,4,10,19,206,620,45,91,78,84,74,27,16,17,13,8,8,6,6,4,5,7],'8/24':[2,3,5,4,11,16,30,35,27,53,42,48,35,41,35,27,31,29,31,21,20,13,3,2],'8/25':[2,3,7,6,16,27,23,30,38,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+  var ECLO={'8/18':[0,5,2,10,4,8,8,12,8,16,24,13,18,24,18,15,12,11,10,15,9,8,8,14],'8/19':[1,7,5,11,8,7,17,8,19,19,27,19,12,20,18,21,11,14,19,25,14,7,6,4],'8/20':[11,4,5,19,7,13,20,15,19,15,22,19,23,29,19,19,13,7,12,14,0,4,11,6],'8/21':[7,5,7,16,11,8,12,22,20,14,17,22,15,24,18,12,11,5,8,17,7,3,0,1],'8/22':[2,1,2,1,7,13,12,12,6,15,16,16,17,22,18,20,18,12,11,8,7,6,5,7],'8/23':[3,10,5,5,8,8,44,47,38,68,55,68,53,54,18,14,15,13,16,12,8,4,9,9],'8/24':[7,8,8,8,15,18,16,16,10,34,34,46,27,19,48,20,22,15,27,14,15,957,111,13],'8/25':[11,11,13,10,13,10,19,25,123,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
   var hrs=[]; for(var h=0;h<24;h++){hrs.push((h%12===0?12:h%12)+(h<12?'a':'p'));}
   var sum=function(a){return a.reduce(function(x,y){return x+y;},0);};
   var xh={grid:{display:false},ticks:{color:mut,font:{size:10},maxRotation:0,autoSkip:false,callback:function(v,i){return i%3===0?hrs[i]:'';}}};
