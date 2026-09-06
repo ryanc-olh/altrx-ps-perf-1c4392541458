@@ -1,7 +1,7 @@
 {
  "client": "altrx",
- "generated_at": "2026-09-06T09:22:27-05:00",
- "generated_at_ct": "9:22am",
+ "generated_at": "2026-09-06T13:33:40-05:00",
+ "generated_at_ct": "1:33pm",
  "window": {
   "start": "2026-08-30",
   "end": "2026-09-05"
@@ -170,16 +170,16 @@
    },
    "2026-09-03": {
     "offered": 2620,
-    "answered": 4786,
+    "answered": 4787,
     "offered_live": 2620,
-    "answered_live": 4786,
+    "answered_live": 4787,
     "answered_in_sl": 2062,
     "short_abandoned": 20,
     "sl_den": 2620,
     "sl": 79.47,
     "sl_answered_only": 79.31,
     "asa_s": 31.6,
-    "aht_s": 721.7
+    "aht_s": 776.4
    },
    "2026-09-04": {
     "offered": 2570,
@@ -196,30 +196,30 @@
    },
    "2026-09-05": {
     "offered": 976,
-    "answered": 1869,
+    "answered": 1870,
     "offered_live": 976,
-    "answered_live": 1869,
+    "answered_live": 1870,
     "answered_in_sl": 792,
     "short_abandoned": 1,
     "sl_den": 976,
     "sl": 81.25,
     "sl_answered_only": 81.23,
     "asa_s": 47.4,
-    "aht_s": 500.7
+    "aht_s": 542.2
    }
   },
   "today": {
-   "offered": 102,
-   "answered": 158,
-   "offered_live": 102,
-   "answered_live": 158,
-   "answered_in_sl": 91,
+   "offered": 337,
+   "answered": 601,
+   "offered_live": 337,
+   "answered_live": 601,
+   "answered_in_sl": 303,
    "short_abandoned": 1,
-   "sl_den": 102,
-   "sl": 90.2,
-   "sl_answered_only": 90.1,
-   "asa_s": 10.5,
-   "aht_s": 383.2
+   "sl_den": 337,
+   "sl": 90.21,
+   "sl_answered_only": 90.18,
+   "asa_s": 13.9,
+   "aht_s": 447.3
   }
  },
  "hourly_voice": {
@@ -1178,10 +1178,10 @@
     200
    ],
    [
-    426,
+    427,
     208,
-    3357387,
-    426,
+    3365268,
+    427,
     216,
     1,
     216
@@ -1659,10 +1659,10 @@
     81
    ],
    [
-    154,
+    155,
     72,
-    1024716,
-    154,
+    1031370,
+    155,
     71,
     0,
     71
@@ -1832,49 +1832,49 @@
     29
    ],
    [
-    30,
-    15,
-    179310,
-    30,
-    23,
+    103,
+    50,
+    723134,
+    103,
+    60,
     1,
-    23
+    60
    ],
    [
+    106,
+    52,
+    781607,
+    106,
+    46,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    46
    ],
    [
+    99,
+    54,
+    653261,
+    99,
+    61,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    61
    ],
    [
+    109,
+    52,
+    1336090,
+    109,
+    58,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    58
    ],
    [
+    56,
+    19,
+    2831396,
+    56,
+    33,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    33
    ],
    [
     0,
@@ -1969,9 +1969,9 @@
   ]
  },
  "email_live": {
-  "rec": 192,
-  "clo": 161,
-  "asof_ct": "9:20am"
+  "rec": 530,
+  "clo": 433,
+  "asof_ct": "1:26pm"
  },
  "errors": [],
  "ok": true
