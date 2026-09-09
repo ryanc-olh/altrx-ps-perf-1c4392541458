@@ -1,7 +1,7 @@
 {
  "client": "altrx",
- "generated_at": "2026-09-09T09:37:48-05:00",
- "generated_at_ct": "9:37am",
+ "generated_at": "2026-09-09T10:28:51-05:00",
+ "generated_at_ct": "10:28am",
  "window": {
   "start": "2026-09-02",
   "end": "2026-09-08"
@@ -14,7 +14,8 @@
   "basis": "queue",
   "queues": [
    "altRx Team",
-   "Whitecoat 1 862-902-1125"
+   "Whitecoat 1 862-902-1125",
+   "AltRX CHAT"
   ],
   "callback_queues": [],
   "note": "Queue-filtered, not client-exact. For Embody the live queue holds 98.7% of the client's queued contacts; the remainder sits in PETE and RN Support, and the queue carries a little other-client traffic. Exact attribution needs per-contact LineOfBusiness enumeration, which does not fit a 5-minute timer."
@@ -196,31 +197,93 @@
    },
    "2026-09-08": {
     "offered": 2570,
-    "answered": 4947,
+    "answered": 4949,
     "offered_live": 2570,
-    "answered_live": 4947,
+    "answered_live": 4949,
     "answered_in_sl": 445,
     "short_abandoned": 18,
     "sl_den": 2570,
     "sl": 18.02,
     "sl_answered_only": 17.44,
     "asa_s": 206.5,
-    "aht_s": 579.6
+    "aht_s": 607.7
    }
   },
   "today": {
-   "offered": 391,
-   "answered": 761,
-   "offered_live": 391,
-   "answered_live": 761,
-   "answered_in_sl": 191,
-   "short_abandoned": 3,
-   "sl_den": 391,
-   "sl": 49.62,
-   "sl_answered_only": 49.23,
-   "asa_s": 80.7,
-   "aht_s": 435.6
+   "offered": 569,
+   "answered": 1142,
+   "offered_live": 569,
+   "answered_live": 1142,
+   "answered_in_sl": 235,
+   "short_abandoned": 5,
+   "sl_den": 569,
+   "sl": 42.18,
+   "sl_answered_only": 41.67,
+   "asa_s": 81.9,
+   "aht_s": 441.5
   }
+ },
+ "chat_informational": {
+  "days": {
+   "2026-09-02": {
+    "offered": 0,
+    "answered": 4,
+    "offered_live": 5,
+    "answered_live": 4,
+    "answered_in_sl": 2,
+    "short_abandoned": 0,
+    "sl_den": 5,
+    "sl_secs": 30,
+    "sl": 40.0,
+    "asa_s": 102.0,
+    "aht_s": null,
+    "hours_ct": "06:00-18:59"
+   },
+   "2026-09-03": {
+    "offered": 0,
+    "answered": 2,
+    "offered_live": 2,
+    "answered_live": 2,
+    "answered_in_sl": 1,
+    "short_abandoned": 0,
+    "sl_den": 2,
+    "sl_secs": 30,
+    "sl": 50.0,
+    "asa_s": 95.0,
+    "aht_s": null,
+    "hours_ct": "06:00-18:59"
+   },
+   "2026-09-08": {
+    "offered": 0,
+    "answered": 142,
+    "offered_live": 143,
+    "answered_live": 142,
+    "answered_in_sl": 136,
+    "short_abandoned": 0,
+    "sl_den": 143,
+    "sl_secs": 30,
+    "sl": 95.1,
+    "asa_s": 9.3,
+    "aht_s": null,
+    "hours_ct": "06:00-18:59"
+   }
+  },
+  "today": {
+   "offered": 0,
+   "answered": 70,
+   "offered_live": 71,
+   "answered_live": 70,
+   "answered_in_sl": 67,
+   "short_abandoned": 0,
+   "sl_den": 71,
+   "sl_secs": 30,
+   "sl": 94.37,
+   "asa_s": 11.9,
+   "aht_s": null,
+   "hours_ct": "06:00-18:59"
+  },
+  "hours_ct": "06:00-18:59 CT",
+  "caveat": "business-hours window only; does NOT exclude chats answered the next day, so SL/ASA here are not comparable to the dashboard's Zoho-sourced chat figures"
  },
  "hourly_voice": {
   "2026-09-02": [
@@ -1659,19 +1722,19 @@
     243
    ],
    [
-    393,
+    394,
     1,
-    131562491,
-    393,
+    131897256,
+    394,
     230,
     2,
     230
    ],
    [
-    355,
+    356,
     0,
-    99782313,
-    355,
+    100063390,
+    356,
     215,
     5,
     215
@@ -1832,22 +1895,22 @@
     139
    ],
    [
-    226,
-    88,
-    3362795,
-    226,
-    121,
-    0,
-    121
+    417,
+    125,
+    15228603,
+    417,
+    197,
+    1,
+    197
    ],
    [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    190,
+    7,
+    20921744,
+    190,
+    102,
+    1,
+    102
    ],
    [
     0,
@@ -1968,10 +2031,36 @@
    ]
   ]
  },
+ "hourly_chat_today": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  11,
+  18,
+  11,
+  19,
+  12,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
  "email_live": {
   "rec": 214,
-  "clo": 403,
-  "asof_ct": "9:33am"
+  "clo": 435,
+  "asof_ct": "10:25am"
  },
  "errors": [],
  "ok": true
