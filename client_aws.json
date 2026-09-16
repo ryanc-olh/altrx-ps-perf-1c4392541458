@@ -1,7 +1,7 @@
 {
  "client": "altrx",
- "generated_at": "2026-09-16T05:27:15-05:00",
- "generated_at_ct": "5:27am",
+ "generated_at": "2026-09-16T10:04:15-05:00",
+ "generated_at_ct": "10:04am",
  "window": {
   "start": "2026-09-09",
   "end": "2026-09-15"
@@ -171,56 +171,56 @@
    },
    "2026-09-13": {
     "offered": 626,
-    "answered": 1656,
+    "answered": 1657,
     "offered_live": 626,
-    "answered_live": 1656,
+    "answered_live": 1657,
     "answered_in_sl": 621,
     "short_abandoned": 1,
     "sl_den": 626,
     "sl": 99.36,
     "sl_answered_only": 99.36,
     "asa_s": 7.6,
-    "aht_s": 1039.4
+    "aht_s": 1184.6
    },
    "2026-09-14": {
     "offered": 2127,
-    "answered": 4824,
+    "answered": 4827,
     "offered_live": 2127,
-    "answered_live": 4824,
+    "answered_live": 4827,
     "answered_in_sl": 1633,
     "short_abandoned": 5,
     "sl_den": 2127,
     "sl": 77.01,
     "sl_answered_only": 76.96,
     "asa_s": 26.8,
-    "aht_s": 797.7
+    "aht_s": 884.6
    },
    "2026-09-15": {
     "offered": 1741,
-    "answered": 4473,
+    "answered": 4484,
     "offered_live": 1741,
-    "answered_live": 4473,
+    "answered_live": 4484,
     "answered_in_sl": 1736,
     "short_abandoned": 2,
     "sl_den": 1741,
     "sl": 99.83,
     "sl_answered_only": 99.83,
     "asa_s": 7.1,
-    "aht_s": 498.1
+    "aht_s": 665.6
    }
   },
   "today": {
-   "offered": 6,
-   "answered": 4,
-   "offered_live": 6,
-   "answered_live": 4,
-   "answered_in_sl": 4,
+   "offered": 369,
+   "answered": 1024,
+   "offered_live": 369,
+   "answered_live": 1024,
+   "answered_in_sl": 332,
    "short_abandoned": 0,
-   "sl_den": 6,
-   "sl": 66.67,
-   "sl_answered_only": 66.67,
-   "asa_s": 7.4,
-   "aht_s": 771.5
+   "sl_den": 369,
+   "sl": 89.97,
+   "sl_answered_only": 89.97,
+   "asa_s": 7.6,
+   "aht_s": 417.7
   }
  },
  "chat_informational": {
@@ -324,7 +324,20 @@
     "hours_ct": "06:00-18:59"
    }
   },
-  "today": null,
+  "today": {
+   "offered": 0,
+   "answered": 157,
+   "offered_live": 157,
+   "answered_live": 157,
+   "answered_in_sl": 155,
+   "short_abandoned": 0,
+   "sl_den": 157,
+   "sl_secs": 30,
+   "sl": 98.73,
+   "asa_s": 261.5,
+   "aht_s": null,
+   "hours_ct": "06:00-18:59"
+  },
   "hours_ct": "06:00-18:59 CT",
   "caveat": "business-hours window only; does NOT exclude chats answered the next day, so SL/ASA here are not comparable to the dashboard's Zoho-sourced chat figures"
  },
@@ -1311,10 +1324,10 @@
     57
    ],
    [
-    129,
+    130,
     35,
-    927189,
-    129,
+    934377,
+    130,
     42,
     0,
     42
@@ -1493,10 +1506,10 @@
     69
    ],
    [
-    340,
+    341,
     86,
-    23708431,
-    340,
+    23778161,
+    341,
     152,
     0,
     152
@@ -1583,10 +1596,10 @@
     133
    ],
    [
-    199,
+    200,
     73,
-    6993359,
-    199,
+    7028502,
+    200,
     90,
     0,
     90
@@ -1610,10 +1623,10 @@
     43
    ],
    [
-    99,
+    100,
     20,
-    747514,
-    99,
+    755065,
+    100,
     21,
     0,
     21
@@ -1711,10 +1724,10 @@
     60
    ],
    [
-    332,
+    335,
     102,
-    2552764,
-    332,
+    2575831,
+    335,
     118,
     0,
     118
@@ -1747,19 +1760,19 @@
     165
    ],
    [
-    465,
+    467,
     174,
-    3101991,
-    465,
+    3115333,
+    467,
     170,
     1,
     170
    ],
    [
-    382,
+    384,
     151,
-    2596975,
-    382,
+    2610572,
+    384,
     157,
     0,
     157
@@ -1783,19 +1796,19 @@
     140
    ],
    [
-    283,
+    285,
     111,
-    1967396,
-    283,
+    1981299,
+    285,
     116,
     0,
     116
    ],
    [
-    210,
+    211,
     101,
-    1485554,
-    210,
+    1492628,
+    211,
     92,
     0,
     92
@@ -1810,10 +1823,10 @@
     78
    ],
    [
-    171,
+    172,
     62,
-    1272009,
-    171,
+    1279448,
+    172,
     57,
     0,
     57
@@ -1902,58 +1915,58 @@
     1
    ],
    [
+    6,
+    6,
+    43869,
+    6,
+    7,
     0,
-    0,
-    0,
-    0,
-    3,
-    0,
-    3
+    7
    ],
    [
+    80,
+    15,
+    621323,
+    80,
+    16,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    16
    ],
    [
+    189,
+    49,
+    1540007,
+    189,
+    60,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    60
    ],
    [
+    322,
+    102,
+    2607805,
+    322,
+    116,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    116
    ],
    [
+    411,
+    152,
+    2963466,
+    411,
+    159,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    159
    ],
    [
+    12,
+    4,
+    83991,
+    12,
+    8,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    8
    ],
    [
     0,
@@ -2081,11 +2094,11 @@
   0,
   0,
   0,
-  0,
-  0,
-  0,
-  0,
-  0,
+  17,
+  31,
+  44,
+  62,
+  3,
   0,
   0,
   0,
@@ -2101,9 +2114,9 @@
   0
  ],
  "email_live": {
-  "rec": 52,
-  "clo": 81,
-  "asof_ct": "5:24am"
+  "rec": 383,
+  "clo": 277,
+  "asof_ct": "9:58am"
  },
  "errors": [],
  "ok": true
